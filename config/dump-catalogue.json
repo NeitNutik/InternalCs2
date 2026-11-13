@@ -1,0 +1,1534 @@
+{
+  "catalogue_version": 1,
+  "source_sha256": "73da8276c235f75f5ab8272246e488e4fdc541b2fc9fed1ef8fdc9eee409e8c9",
+  "runtime_verified": false,
+  "notice": "Relative field facts only. Not a live layout. No guest mappings, roots, native transform layouts, game version or ELF build ID can be inferred from this catalogue.",
+  "types": [
+    {
+      "type_index": 10528,
+      "name": "SpectatePlayerGeneralInfo",
+      "namespace": "Axlebolt.Standoff.UI.HUD.MVP.SpectatorHud.SpectatePlayerInfo.Model",
+      "kind": "struct",
+      "base_declaration": null,
+      "line": 661717,
+      "fields": [
+        {
+          "name": "Id",
+          "type": "int",
+          "offset": 0,
+          "storage": "instance",
+          "line": 661720
+        },
+        {
+          "name": "Name",
+          "type": "string",
+          "offset": 8,
+          "storage": "instance",
+          "line": 661721
+        },
+        {
+          "name": "Team",
+          "type": "byte",
+          "offset": 16,
+          "storage": "instance",
+          "line": 661722
+        },
+        {
+          "name": "Hp",
+          "type": "ushort",
+          "offset": 18,
+          "storage": "instance",
+          "line": 661723
+        },
+        {
+          "name": "MaxHp",
+          "type": "ushort",
+          "offset": 20,
+          "storage": "instance",
+          "line": 661724
+        },
+        {
+          "name": "Armor",
+          "type": "ushort",
+          "offset": 22,
+          "storage": "instance",
+          "line": 661725
+        },
+        {
+          "name": "HasHelmet",
+          "type": "bool",
+          "offset": 24,
+          "storage": "instance",
+          "line": 661726
+        },
+        {
+          "name": "MetaInstance",
+          "type": "bes",
+          "offset": 32,
+          "storage": "instance",
+          "line": 661727
+        }
+      ],
+      "enum_values": {},
+      "assembly": "Axlebolt.Standoff.UI.HUD.dll"
+    },
+    {
+      "type_index": 10609,
+      "name": "object.AmmoData",
+      "namespace": "",
+      "kind": "struct",
+      "base_declaration": "object",
+      "line": 664414,
+      "fields": [
+        {
+          "name": "<WeaponSlot>k__BackingField",
+          "type": "qco",
+          "offset": 0,
+          "storage": "instance",
+          "line": 664417
+        },
+        {
+          "name": "<WeaponCategory>k__BackingField",
+          "type": "kkj",
+          "offset": 4,
+          "storage": "instance",
+          "line": 664418
+        },
+        {
+          "name": "<Ammo>k__BackingField",
+          "type": "byte",
+          "offset": 8,
+          "storage": "instance",
+          "line": 664419
+        },
+        {
+          "name": "<RestAmmo>k__BackingField",
+          "type": "ushort",
+          "offset": 10,
+          "storage": "instance",
+          "line": 664420
+        }
+      ],
+      "enum_values": {},
+      "assembly": "Axlebolt.Standoff.UI.HUD.dll"
+    },
+    {
+      "type_index": 14775,
+      "name": "odq",
+      "namespace": "",
+      "kind": "class",
+      "base_declaration": "wwv, object, yzq, fyl, biq, kgb, puc",
+      "line": 850839,
+      "fields": [
+        {
+          "name": "uiav",
+          "type": "giq",
+          "offset": 88,
+          "storage": "instance",
+          "line": 850842
+        },
+        {
+          "name": "ximo",
+          "type": "float3[]",
+          "offset": 96,
+          "storage": "instance",
+          "line": 850843
+        },
+        {
+          "name": "aiyh",
+          "type": "yvt",
+          "offset": 104,
+          "storage": "instance",
+          "line": 850844
+        },
+        {
+          "name": "djka",
+          "type": "ydm",
+          "offset": 112,
+          "storage": "instance",
+          "line": 850845
+        },
+        {
+          "name": "gjvt",
+          "type": "vqn",
+          "offset": 120,
+          "storage": "instance",
+          "line": 850846
+        },
+        {
+          "name": "jkhm",
+          "type": "dvp",
+          "offset": 128,
+          "storage": "instance",
+          "line": 850847
+        },
+        {
+          "name": "<mktf>k__BackingField",
+          "type": "szi",
+          "offset": 136,
+          "storage": "instance",
+          "line": 850848
+        },
+        {
+          "name": "<pley>k__BackingField",
+          "type": "byte",
+          "offset": 144,
+          "storage": "instance",
+          "line": 850849
+        }
+      ],
+      "enum_values": {},
+      "assembly": "Axlebolt.Standoff.Gameplay.Player.dll"
+    },
+    {
+      "type_index": 14793,
+      "name": "ydm",
+      "namespace": "",
+      "kind": "class",
+      "base_declaration": "cew",
+      "line": 851650,
+      "fields": [
+        {
+          "name": "<espa>k__BackingField",
+          "type": "ushort",
+          "offset": 16,
+          "storage": "instance",
+          "line": 851653
+        },
+        {
+          "name": "<htat>k__BackingField",
+          "type": "ushort",
+          "offset": 18,
+          "storage": "instance",
+          "line": 851654
+        },
+        {
+          "name": "<ktmm>k__BackingField",
+          "type": "ushort",
+          "offset": 20,
+          "storage": "instance",
+          "line": 851655
+        },
+        {
+          "name": "<ntyf>k__BackingField",
+          "type": "ushort",
+          "offset": 22,
+          "storage": "instance",
+          "line": 851656
+        },
+        {
+          "name": "<qujy>k__BackingField",
+          "type": "ushort",
+          "offset": 24,
+          "storage": "instance",
+          "line": 851657
+        },
+        {
+          "name": "<tuvr>k__BackingField",
+          "type": "ushort",
+          "offset": 26,
+          "storage": "instance",
+          "line": 851658
+        },
+        {
+          "name": "<wvhk>k__BackingField",
+          "type": "bool",
+          "offset": 28,
+          "storage": "instance",
+          "line": 851659
+        },
+        {
+          "name": "<zvtd>k__BackingField",
+          "type": "float",
+          "offset": 32,
+          "storage": "instance",
+          "line": 851660
+        }
+      ],
+      "enum_values": {},
+      "assembly": "Axlebolt.Standoff.Gameplay.Player.dll"
+    },
+    {
+      "type_index": 14831,
+      "name": "WeaponSnapshot",
+      "namespace": "Axlebolt.Standoff.Gameplay.Player.Components.Weaponry",
+      "kind": "struct",
+      "base_declaration": "object",
+      "line": 852769,
+      "fields": [
+        {
+          "name": "<Id>k__BackingField",
+          "type": "byte",
+          "offset": 0,
+          "storage": "instance",
+          "line": 852772
+        },
+        {
+          "name": "<MetaId>k__BackingField",
+          "type": "WeaponMetaId",
+          "offset": 2,
+          "storage": "instance",
+          "line": 852773
+        },
+        {
+          "name": "<Ammo>k__BackingField",
+          "type": "short",
+          "offset": 4,
+          "storage": "instance",
+          "line": 852774
+        },
+        {
+          "name": "<RestAmmo>k__BackingField",
+          "type": "short",
+          "offset": 6,
+          "storage": "instance",
+          "line": 852775
+        },
+        {
+          "name": "<LastAttackTime>k__BackingField",
+          "type": "float",
+          "offset": 8,
+          "storage": "instance",
+          "line": 852776
+        },
+        {
+          "name": "<Slot>k__BackingField",
+          "type": "qco",
+          "offset": 12,
+          "storage": "instance",
+          "line": 852777
+        },
+        {
+          "name": "<TakeSource>k__BackingField",
+          "type": "pkc",
+          "offset": 13,
+          "storage": "instance",
+          "line": 852778
+        }
+      ],
+      "enum_values": {},
+      "assembly": "Axlebolt.Standoff.Gameplay.Player.dll"
+    },
+    {
+      "type_index": 15155,
+      "name": "xiz",
+      "namespace": "",
+      "kind": "class",
+      "base_declaration": "qyn",
+      "line": 861232,
+      "fields": [],
+      "enum_values": {},
+      "assembly": "NetCode.Framework.dll"
+    },
+    {
+      "type_index": 15514,
+      "name": "wwv",
+      "namespace": "",
+      "kind": "class",
+      "base_declaration": "ohn",
+      "line": 876156,
+      "fields": [
+        {
+          "name": "sumb",
+          "type": "NetObjectId",
+          "offset": 16,
+          "storage": "instance",
+          "line": 876159
+        },
+        {
+          "name": "vuxu",
+          "type": "qyn",
+          "offset": 24,
+          "storage": "instance",
+          "line": 876160
+        },
+        {
+          "name": "yvjn",
+          "type": "cpa",
+          "offset": 32,
+          "storage": "instance",
+          "line": 876161
+        },
+        {
+          "name": "bvvg",
+          "type": "nzk",
+          "offset": 40,
+          "storage": "instance",
+          "line": 876162
+        },
+        {
+          "name": "ewgz",
+          "type": "object",
+          "offset": 48,
+          "storage": "instance",
+          "line": 876163
+        },
+        {
+          "name": "hwss",
+          "type": "object",
+          "offset": 56,
+          "storage": "instance",
+          "line": 876164
+        },
+        {
+          "name": "kxel",
+          "type": "uint",
+          "offset": 64,
+          "storage": "instance",
+          "line": 876165
+        },
+        {
+          "name": "<nxqe>k__BackingField",
+          "type": "bool",
+          "offset": 68,
+          "storage": "instance",
+          "line": 876166
+        },
+        {
+          "name": "<qybx>k__BackingField",
+          "type": "bool",
+          "offset": 69,
+          "storage": "instance",
+          "line": 876167
+        },
+        {
+          "name": "<tynq>k__BackingField",
+          "type": "bool",
+          "offset": 70,
+          "storage": "instance",
+          "line": 876168
+        },
+        {
+          "name": "<wyzj>k__BackingField",
+          "type": "Lifetime",
+          "offset": 72,
+          "storage": "instance",
+          "line": 876169
+        },
+        {
+          "name": "<zzlc>k__BackingField",
+          "type": "zju",
+          "offset": 80,
+          "storage": "instance",
+          "line": 876170
+        },
+        {
+          "name": "<czwv>k__BackingField",
+          "type": "bool",
+          "offset": 84,
+          "storage": "instance",
+          "line": 876171
+        }
+      ],
+      "enum_values": {},
+      "assembly": "NetCode.Framework.dll"
+    },
+    {
+      "type_index": 20191,
+      "name": "FireHitCastState",
+      "namespace": "",
+      "kind": "struct",
+      "base_declaration": null,
+      "line": 1006918,
+      "fields": [
+        {
+          "name": "HitId",
+          "type": "Guid",
+          "offset": 0,
+          "storage": "instance",
+          "line": 1006921
+        },
+        {
+          "name": "HitParameters",
+          "type": "HitParameters",
+          "offset": 16,
+          "storage": "instance",
+          "line": 1006922
+        },
+        {
+          "name": "OwnerId",
+          "type": "NetObjectId",
+          "offset": 32,
+          "storage": "instance",
+          "line": 1006923
+        },
+        {
+          "name": "ShooterId",
+          "type": "NetObjectId",
+          "offset": 40,
+          "storage": "instance",
+          "line": 1006924
+        },
+        {
+          "name": "WeaponId",
+          "type": "WeaponId",
+          "offset": 48,
+          "storage": "instance",
+          "line": 1006925
+        },
+        {
+          "name": "WeaponMetaId",
+          "type": "WeaponMetaId",
+          "offset": 50,
+          "storage": "instance",
+          "line": 1006926
+        },
+        {
+          "name": "Scoped",
+          "type": "bool",
+          "offset": 52,
+          "storage": "instance",
+          "line": 1006927
+        },
+        {
+          "name": "PenetrationPower",
+          "type": "float",
+          "offset": 56,
+          "storage": "instance",
+          "line": 1006928
+        },
+        {
+          "name": "IgnoreSurfaceHits",
+          "type": "bool",
+          "offset": 60,
+          "storage": "instance",
+          "line": 1006929
+        }
+      ],
+      "enum_values": {},
+      "assembly": "Axlebolt.Standoff.Gameplay.Features.Weaponry.dll"
+    },
+    {
+      "type_index": 20196,
+      "name": "HitParameters",
+      "namespace": "Axlebolt.Standoff.Gameplay.Features.Weaponry.HitCasting",
+      "kind": "struct",
+      "base_declaration": null,
+      "line": 1007065,
+      "fields": [
+        {
+          "name": "ArmorPenetration",
+          "type": "int",
+          "offset": 0,
+          "storage": "instance",
+          "line": 1007068
+        },
+        {
+          "name": "PenetrationPower",
+          "type": "float",
+          "offset": 4,
+          "storage": "instance",
+          "line": 1007069
+        },
+        {
+          "name": "Impulse",
+          "type": "int",
+          "offset": 8,
+          "storage": "instance",
+          "line": 1007070
+        },
+        {
+          "name": "Range",
+          "type": "float",
+          "offset": 12,
+          "storage": "instance",
+          "line": 1007071
+        }
+      ],
+      "enum_values": {},
+      "assembly": "Axlebolt.Standoff.Gameplay.Features.Weaponry.dll"
+    },
+    {
+      "type_index": 20274,
+      "name": "HitCastData",
+      "namespace": "Axlebolt.Standoff.Gameplay.Features.Weaponry.Data",
+      "kind": "struct",
+      "base_declaration": null,
+      "line": 1009984,
+      "fields": [
+        {
+          "name": "Id",
+          "type": "uint",
+          "offset": 0,
+          "storage": "instance",
+          "line": 1009987
+        },
+        {
+          "name": "Shooter",
+          "type": "NetObjectId",
+          "offset": 4,
+          "storage": "instance",
+          "line": 1009988
+        },
+        {
+          "name": "WeaponId",
+          "type": "WeaponId",
+          "offset": 12,
+          "storage": "instance",
+          "line": 1009989
+        },
+        {
+          "name": "ShotPoint",
+          "type": "Vector3",
+          "offset": 16,
+          "storage": "instance",
+          "line": 1009990
+        },
+        {
+          "name": "Direction",
+          "type": "Vector3",
+          "offset": 28,
+          "storage": "instance",
+          "line": 1009991
+        }
+      ],
+      "enum_values": {},
+      "assembly": "Axlebolt.Standoff.Gameplay.Features.Weaponry.dll"
+    },
+    {
+      "type_index": 20275,
+      "name": "NavigationContext",
+      "namespace": "Axlebolt.Standoff.Gameplay.Features.Weaponry.Data",
+      "kind": "struct",
+      "base_declaration": "object",
+      "line": 1010003,
+      "fields": [
+        {
+          "name": "IsCrouch",
+          "type": "bool",
+          "offset": 0,
+          "storage": "instance",
+          "line": 1010006
+        },
+        {
+          "name": "IsJump",
+          "type": "bool",
+          "offset": 1,
+          "storage": "instance",
+          "line": 1010007
+        },
+        {
+          "name": "Speed",
+          "type": "float",
+          "offset": 4,
+          "storage": "instance",
+          "line": 1010008
+        },
+        {
+          "name": "Position",
+          "type": "Vector3",
+          "offset": 8,
+          "storage": "instance",
+          "line": 1010009
+        },
+        {
+          "name": "Velocity",
+          "type": "Vector3",
+          "offset": 20,
+          "storage": "instance",
+          "line": 1010010
+        }
+      ],
+      "enum_values": {},
+      "assembly": "Axlebolt.Standoff.Gameplay.Features.Weaponry.dll"
+    },
+    {
+      "type_index": 20285,
+      "name": "WeaponContext",
+      "namespace": "Axlebolt.Standoff.Gameplay.Features.Weaponry.Data",
+      "kind": "struct",
+      "base_declaration": null,
+      "line": 1010341,
+      "fields": [
+        {
+          "name": "Owner",
+          "type": "NetObjectId",
+          "offset": 0,
+          "storage": "instance",
+          "line": 1010344
+        },
+        {
+          "name": "Shooter",
+          "type": "NetObjectId",
+          "offset": 8,
+          "storage": "instance",
+          "line": 1010345
+        },
+        {
+          "name": "Team",
+          "type": "byte",
+          "offset": 16,
+          "storage": "instance",
+          "line": 1010346
+        },
+        {
+          "name": "HitTransform",
+          "type": "Transform",
+          "offset": 24,
+          "storage": "instance",
+          "line": 1010347
+        },
+        {
+          "name": "NavigationContext",
+          "type": "NavigationContext",
+          "offset": 32,
+          "storage": "instance",
+          "line": 1010348
+        },
+        {
+          "name": "AccuracyContext",
+          "type": "AccuracyContext",
+          "offset": 64,
+          "storage": "instance",
+          "line": 1010349
+        },
+        {
+          "name": "RecoilContext",
+          "type": "RecoilContext",
+          "offset": 72,
+          "storage": "instance",
+          "line": 1010350
+        },
+        {
+          "name": "ActiveWeapon",
+          "type": "jrx",
+          "offset": 80,
+          "storage": "instance",
+          "line": 1010351
+        },
+        {
+          "name": "WeaponState",
+          "type": "object",
+          "offset": 88,
+          "storage": "instance",
+          "line": 1010352
+        },
+        {
+          "name": "AimState",
+          "type": "object",
+          "offset": 100,
+          "storage": "instance",
+          "line": 1010353
+        },
+        {
+          "name": "RecoilState",
+          "type": "RecoilState",
+          "offset": 112,
+          "storage": "instance",
+          "line": 1010354
+        },
+        {
+          "name": "ReloadState",
+          "type": "ReloadState",
+          "offset": 144,
+          "storage": "instance",
+          "line": 1010355
+        },
+        {
+          "name": "CurrentTime",
+          "type": "float",
+          "offset": 148,
+          "storage": "instance",
+          "line": 1010356
+        },
+        {
+          "name": "HitRandom",
+          "type": "Random",
+          "offset": 152,
+          "storage": "instance",
+          "line": 1010357
+        },
+        {
+          "name": "<WasHit>k__BackingField",
+          "type": "bool",
+          "offset": 156,
+          "storage": "instance",
+          "line": 1010358
+        },
+        {
+          "name": "<ClearWeaponSignal>k__BackingField",
+          "type": "object",
+          "offset": 160,
+          "storage": "instance",
+          "line": 1010359
+        }
+      ],
+      "enum_values": {},
+      "assembly": "Axlebolt.Standoff.Gameplay.Features.Weaponry.dll"
+    },
+    {
+      "type_index": 20286,
+      "name": "jrx",
+      "namespace": "",
+      "kind": "class",
+      "base_declaration": "object",
+      "line": 1010396,
+      "fields": [
+        {
+          "name": "lqfn",
+          "type": "jrx",
+          "offset": 0,
+          "storage": "static",
+          "line": 1010399
+        },
+        {
+          "name": "<oqrg>k__BackingField",
+          "type": "WeaponId",
+          "offset": 16,
+          "storage": "instance",
+          "line": 1010400
+        },
+        {
+          "name": "<rrcz>k__BackingField",
+          "type": "WeaponMetaData",
+          "offset": 24,
+          "storage": "instance",
+          "line": 1010401
+        },
+        {
+          "name": "<uros>k__BackingField",
+          "type": "WeaponMetaId",
+          "offset": 80,
+          "storage": "instance",
+          "line": 1010402
+        },
+        {
+          "name": "<xsal>k__BackingField",
+          "type": "byte",
+          "offset": 82,
+          "storage": "instance",
+          "line": 1010403
+        },
+        {
+          "name": "<asme>k__BackingField",
+          "type": "ushort",
+          "offset": 84,
+          "storage": "instance",
+          "line": 1010404
+        },
+        {
+          "name": "<dsxx>k__BackingField",
+          "type": "float",
+          "offset": 88,
+          "storage": "instance",
+          "line": 1010405
+        },
+        {
+          "name": "<gtjq>k__BackingField",
+          "type": "vut",
+          "offset": 96,
+          "storage": "instance",
+          "line": 1010406
+        },
+        {
+          "name": "<jtvj>k__BackingField",
+          "type": "pkc",
+          "offset": 104,
+          "storage": "instance",
+          "line": 1010407
+        }
+      ],
+      "enum_values": {},
+      "assembly": "Axlebolt.Standoff.Gameplay.Features.Weaponry.dll"
+    },
+    {
+      "type_index": 21125,
+      "name": "HumanBodyBones",
+      "namespace": "UnityEngine",
+      "kind": "enum",
+      "base_declaration": null,
+      "line": 1039099,
+      "fields": [
+        {
+          "name": "value__",
+          "type": "int",
+          "offset": 0,
+          "storage": "instance",
+          "line": 1039102
+        }
+      ],
+      "enum_values": {
+        "Hips": 0,
+        "LeftUpperLeg": 1,
+        "RightUpperLeg": 2,
+        "LeftLowerLeg": 3,
+        "RightLowerLeg": 4,
+        "LeftFoot": 5,
+        "RightFoot": 6,
+        "Spine": 7,
+        "Chest": 8,
+        "UpperChest": 54,
+        "Neck": 9,
+        "Head": 10,
+        "LeftShoulder": 11,
+        "RightShoulder": 12,
+        "LeftUpperArm": 13,
+        "RightUpperArm": 14,
+        "LeftLowerArm": 15,
+        "RightLowerArm": 16,
+        "LeftHand": 17,
+        "RightHand": 18,
+        "LeftToes": 19,
+        "RightToes": 20,
+        "LeftEye": 21,
+        "RightEye": 22,
+        "Jaw": 23,
+        "LeftThumbProximal": 24,
+        "LeftThumbIntermediate": 25,
+        "LeftThumbDistal": 26,
+        "LeftIndexProximal": 27,
+        "LeftIndexIntermediate": 28,
+        "LeftIndexDistal": 29,
+        "LeftMiddleProximal": 30,
+        "LeftMiddleIntermediate": 31,
+        "LeftMiddleDistal": 32,
+        "LeftRingProximal": 33,
+        "LeftRingIntermediate": 34,
+        "LeftRingDistal": 35,
+        "LeftLittleProximal": 36,
+        "LeftLittleIntermediate": 37,
+        "LeftLittleDistal": 38,
+        "RightThumbProximal": 39,
+        "RightThumbIntermediate": 40,
+        "RightThumbDistal": 41,
+        "RightIndexProximal": 42,
+        "RightIndexIntermediate": 43,
+        "RightIndexDistal": 44,
+        "RightMiddleProximal": 45,
+        "RightMiddleIntermediate": 46,
+        "RightMiddleDistal": 47,
+        "RightRingProximal": 48,
+        "RightRingIntermediate": 49,
+        "RightRingDistal": 50,
+        "RightLittleProximal": 51,
+        "RightLittleIntermediate": 52,
+        "RightLittleDistal": 53,
+        "LastBone": 55
+      },
+      "assembly": "UnityEngine.AnimationModule.dll"
+    },
+    {
+      "type_index": 34725,
+      "name": "WeaponId",
+      "namespace": "Axlebolt.Standoff.Shared.Primitives",
+      "kind": "struct",
+      "base_declaration": "object",
+      "line": 1389714,
+      "fields": [
+        {
+          "name": "<Raw>k__BackingField",
+          "type": "byte",
+          "offset": 0,
+          "storage": "instance",
+          "line": 1389717
+        }
+      ],
+      "enum_values": {},
+      "assembly": "Axlebolt.Standoff.Shared.dll"
+    },
+    {
+      "type_index": 35544,
+      "name": "HitBox",
+      "namespace": "Axlebolt.Standoff.Gameplay.Features.HitBoxes",
+      "kind": "struct",
+      "base_declaration": null,
+      "line": 1403330,
+      "fields": [
+        {
+          "name": "bone",
+          "type": "HumanBodyBones",
+          "offset": 0,
+          "storage": "instance",
+          "line": 1403333
+        },
+        {
+          "name": "lossPenetrationPower",
+          "type": "int",
+          "offset": 4,
+          "storage": "instance",
+          "line": 1403334
+        }
+      ],
+      "enum_values": {},
+      "assembly": "Axlebolt.Standoff.Gameplay.HitBoxes.dll"
+    },
+    {
+      "type_index": 35547,
+      "name": "HitRequest",
+      "namespace": "Axlebolt.Standoff.Gameplay.Features.HitBoxes",
+      "kind": "struct",
+      "base_declaration": null,
+      "line": 1403389,
+      "fields": [
+        {
+          "name": "HitId",
+          "type": "Guid",
+          "offset": 0,
+          "storage": "instance",
+          "line": 1403392
+        },
+        {
+          "name": "ShotPoint",
+          "type": "Vector3",
+          "offset": 16,
+          "storage": "instance",
+          "line": 1403393
+        },
+        {
+          "name": "Point",
+          "type": "Vector3",
+          "offset": 28,
+          "storage": "instance",
+          "line": 1403394
+        },
+        {
+          "name": "Impulse",
+          "type": "float",
+          "offset": 40,
+          "storage": "instance",
+          "line": 1403395
+        },
+        {
+          "name": "ArmorPenetration",
+          "type": "float",
+          "offset": 44,
+          "storage": "instance",
+          "line": 1403396
+        },
+        {
+          "name": "ProducerId",
+          "type": "NetObjectId",
+          "offset": 48,
+          "storage": "instance",
+          "line": 1403397
+        },
+        {
+          "name": "WeaponId",
+          "type": "WeaponId",
+          "offset": 56,
+          "storage": "instance",
+          "line": 1403398
+        },
+        {
+          "name": "WeaponMetaId",
+          "type": "WeaponMetaId",
+          "offset": 58,
+          "storage": "instance",
+          "line": 1403399
+        },
+        {
+          "name": "DamageReduceMult",
+          "type": "float",
+          "offset": 60,
+          "storage": "instance",
+          "line": 1403400
+        },
+        {
+          "name": "Bone",
+          "type": "HumanBodyBones",
+          "offset": 64,
+          "storage": "instance",
+          "line": 1403401
+        },
+        {
+          "name": "Scoped",
+          "type": "bool",
+          "offset": 68,
+          "storage": "instance",
+          "line": 1403402
+        }
+      ],
+      "enum_values": {},
+      "assembly": "Axlebolt.Standoff.Gameplay.HitBoxes.dll"
+    },
+    {
+      "type_index": 35670,
+      "name": "CharacterBindings",
+      "namespace": "Axlebolt.Standoff.Gameplay.Features.Character",
+      "kind": "class",
+      "base_declaration": "MonoBehaviour",
+      "line": 1404928,
+      "fields": [
+        {
+          "name": "_bones",
+          "type": "BonesDictionary",
+          "offset": 32,
+          "storage": "instance",
+          "line": 1404931
+        },
+        {
+          "name": "<Tool>k__BackingField",
+          "type": "GameObject",
+          "offset": 40,
+          "storage": "instance",
+          "line": 1404932
+        },
+        {
+          "name": "<Animator>k__BackingField",
+          "type": "Animator",
+          "offset": 48,
+          "storage": "instance",
+          "line": 1404933
+        },
+        {
+          "name": "<CharacterRenderer>k__BackingField",
+          "type": "SkinnedMeshRenderer",
+          "offset": 56,
+          "storage": "instance",
+          "line": 1404934
+        },
+        {
+          "name": "<ArmsRenderer>k__BackingField",
+          "type": "SkinnedMeshRenderer",
+          "offset": 64,
+          "storage": "instance",
+          "line": 1404935
+        },
+        {
+          "name": "<GlovesRenderer>k__BackingField",
+          "type": "SkinnedMeshRenderer",
+          "offset": 72,
+          "storage": "instance",
+          "line": 1404936
+        },
+        {
+          "name": "<UntouchableMaterial>k__BackingField",
+          "type": "Material",
+          "offset": 80,
+          "storage": "instance",
+          "line": 1404937
+        },
+        {
+          "name": "<OutlineMaterial>k__BackingField",
+          "type": "Material",
+          "offset": 88,
+          "storage": "instance",
+          "line": 1404938
+        },
+        {
+          "name": "<LeftHandGoal>k__BackingField",
+          "type": "GameObject",
+          "offset": 96,
+          "storage": "instance",
+          "line": 1404939
+        },
+        {
+          "name": "<LeftHandHint>k__BackingField",
+          "type": "GameObject",
+          "offset": 104,
+          "storage": "instance",
+          "line": 1404940
+        },
+        {
+          "name": "<RightHandGoal>k__BackingField",
+          "type": "GameObject",
+          "offset": 112,
+          "storage": "instance",
+          "line": 1404941
+        },
+        {
+          "name": "<RightHandHint>k__BackingField",
+          "type": "GameObject",
+          "offset": 120,
+          "storage": "instance",
+          "line": 1404942
+        }
+      ],
+      "enum_values": {},
+      "assembly": "Axlebolt.Standoff.Gameplay.Features.Character.dll"
+    },
+    {
+      "type_index": 35671,
+      "name": "BonesDictionary",
+      "namespace": "Axlebolt.Standoff.Gameplay.Features.Character",
+      "kind": "class",
+      "base_declaration": null,
+      "line": 1405034,
+      "fields": [],
+      "enum_values": {},
+      "assembly": "Axlebolt.Standoff.Gameplay.Features.Character.dll"
+    }
+  ],
+  "relative_field_bindings": {
+    "10528:Id": {
+      "base_type_index": 10528,
+      "base_type": "SpectatePlayerGeneralInfo",
+      "requires_unboxed_struct_base": true,
+      "offsets": [
+        0
+      ],
+      "type": "i32",
+      "source_line": 661720
+    },
+    "10528:Team": {
+      "base_type_index": 10528,
+      "base_type": "SpectatePlayerGeneralInfo",
+      "requires_unboxed_struct_base": true,
+      "offsets": [
+        16
+      ],
+      "type": "u8",
+      "source_line": 661722
+    },
+    "10528:Hp": {
+      "base_type_index": 10528,
+      "base_type": "SpectatePlayerGeneralInfo",
+      "requires_unboxed_struct_base": true,
+      "offsets": [
+        18
+      ],
+      "type": "u16",
+      "source_line": 661723
+    },
+    "10528:MaxHp": {
+      "base_type_index": 10528,
+      "base_type": "SpectatePlayerGeneralInfo",
+      "requires_unboxed_struct_base": true,
+      "offsets": [
+        20
+      ],
+      "type": "u16",
+      "source_line": 661724
+    },
+    "10528:Armor": {
+      "base_type_index": 10528,
+      "base_type": "SpectatePlayerGeneralInfo",
+      "requires_unboxed_struct_base": true,
+      "offsets": [
+        22
+      ],
+      "type": "u16",
+      "source_line": 661725
+    },
+    "10528:HasHelmet": {
+      "base_type_index": 10528,
+      "base_type": "SpectatePlayerGeneralInfo",
+      "requires_unboxed_struct_base": true,
+      "offsets": [
+        24
+      ],
+      "type": "bool",
+      "source_line": 661726
+    },
+    "10609:<Ammo>k__BackingField": {
+      "base_type_index": 10609,
+      "base_type": "object.AmmoData",
+      "requires_unboxed_struct_base": true,
+      "offsets": [
+        8
+      ],
+      "type": "u8",
+      "source_line": 664419
+    },
+    "10609:<RestAmmo>k__BackingField": {
+      "base_type_index": 10609,
+      "base_type": "object.AmmoData",
+      "requires_unboxed_struct_base": true,
+      "offsets": [
+        10
+      ],
+      "type": "u16",
+      "source_line": 664420
+    },
+    "14775:<pley>k__BackingField": {
+      "base_type_index": 14775,
+      "base_type": "odq",
+      "requires_unboxed_struct_base": false,
+      "offsets": [
+        144
+      ],
+      "type": "u8",
+      "source_line": 850849
+    },
+    "14793:<espa>k__BackingField": {
+      "base_type_index": 14793,
+      "base_type": "ydm",
+      "requires_unboxed_struct_base": false,
+      "offsets": [
+        16
+      ],
+      "type": "u16",
+      "source_line": 851653
+    },
+    "14793:<htat>k__BackingField": {
+      "base_type_index": 14793,
+      "base_type": "ydm",
+      "requires_unboxed_struct_base": false,
+      "offsets": [
+        18
+      ],
+      "type": "u16",
+      "source_line": 851654
+    },
+    "14793:<ktmm>k__BackingField": {
+      "base_type_index": 14793,
+      "base_type": "ydm",
+      "requires_unboxed_struct_base": false,
+      "offsets": [
+        20
+      ],
+      "type": "u16",
+      "source_line": 851655
+    },
+    "14793:<ntyf>k__BackingField": {
+      "base_type_index": 14793,
+      "base_type": "ydm",
+      "requires_unboxed_struct_base": false,
+      "offsets": [
+        22
+      ],
+      "type": "u16",
+      "source_line": 851656
+    },
+    "14793:<qujy>k__BackingField": {
+      "base_type_index": 14793,
+      "base_type": "ydm",
+      "requires_unboxed_struct_base": false,
+      "offsets": [
+        24
+      ],
+      "type": "u16",
+      "source_line": 851657
+    },
+    "14793:<tuvr>k__BackingField": {
+      "base_type_index": 14793,
+      "base_type": "ydm",
+      "requires_unboxed_struct_base": false,
+      "offsets": [
+        26
+      ],
+      "type": "u16",
+      "source_line": 851658
+    },
+    "14793:<wvhk>k__BackingField": {
+      "base_type_index": 14793,
+      "base_type": "ydm",
+      "requires_unboxed_struct_base": false,
+      "offsets": [
+        28
+      ],
+      "type": "bool",
+      "source_line": 851659
+    },
+    "14831:<Id>k__BackingField": {
+      "base_type_index": 14831,
+      "base_type": "WeaponSnapshot",
+      "requires_unboxed_struct_base": true,
+      "offsets": [
+        0
+      ],
+      "type": "u8",
+      "source_line": 852772
+    },
+    "14831:<Ammo>k__BackingField": {
+      "base_type_index": 14831,
+      "base_type": "WeaponSnapshot",
+      "requires_unboxed_struct_base": true,
+      "offsets": [
+        4
+      ],
+      "type": "i16",
+      "source_line": 852774
+    },
+    "14831:<RestAmmo>k__BackingField": {
+      "base_type_index": 14831,
+      "base_type": "WeaponSnapshot",
+      "requires_unboxed_struct_base": true,
+      "offsets": [
+        6
+      ],
+      "type": "i16",
+      "source_line": 852775
+    },
+    "15514:kxel": {
+      "base_type_index": 15514,
+      "base_type": "wwv",
+      "requires_unboxed_struct_base": false,
+      "offsets": [
+        64
+      ],
+      "type": "u32",
+      "source_line": 876165
+    },
+    "15514:<nxqe>k__BackingField": {
+      "base_type_index": 15514,
+      "base_type": "wwv",
+      "requires_unboxed_struct_base": false,
+      "offsets": [
+        68
+      ],
+      "type": "bool",
+      "source_line": 876166
+    },
+    "15514:<qybx>k__BackingField": {
+      "base_type_index": 15514,
+      "base_type": "wwv",
+      "requires_unboxed_struct_base": false,
+      "offsets": [
+        69
+      ],
+      "type": "bool",
+      "source_line": 876167
+    },
+    "15514:<tynq>k__BackingField": {
+      "base_type_index": 15514,
+      "base_type": "wwv",
+      "requires_unboxed_struct_base": false,
+      "offsets": [
+        70
+      ],
+      "type": "bool",
+      "source_line": 876168
+    },
+    "15514:<czwv>k__BackingField": {
+      "base_type_index": 15514,
+      "base_type": "wwv",
+      "requires_unboxed_struct_base": false,
+      "offsets": [
+        84
+      ],
+      "type": "bool",
+      "source_line": 876171
+    },
+    "20191:Scoped": {
+      "base_type_index": 20191,
+      "base_type": "FireHitCastState",
+      "requires_unboxed_struct_base": true,
+      "offsets": [
+        52
+      ],
+      "type": "bool",
+      "source_line": 1006927
+    },
+    "20191:IgnoreSurfaceHits": {
+      "base_type_index": 20191,
+      "base_type": "FireHitCastState",
+      "requires_unboxed_struct_base": true,
+      "offsets": [
+        60
+      ],
+      "type": "bool",
+      "source_line": 1006929
+    },
+    "20196:ArmorPenetration": {
+      "base_type_index": 20196,
+      "base_type": "HitParameters",
+      "requires_unboxed_struct_base": true,
+      "offsets": [
+        0
+      ],
+      "type": "i32",
+      "source_line": 1007068
+    },
+    "20196:Impulse": {
+      "base_type_index": 20196,
+      "base_type": "HitParameters",
+      "requires_unboxed_struct_base": true,
+      "offsets": [
+        8
+      ],
+      "type": "i32",
+      "source_line": 1007070
+    },
+    "20274:Id": {
+      "base_type_index": 20274,
+      "base_type": "HitCastData",
+      "requires_unboxed_struct_base": true,
+      "offsets": [
+        0
+      ],
+      "type": "u32",
+      "source_line": 1009987
+    },
+    "20275:IsCrouch": {
+      "base_type_index": 20275,
+      "base_type": "NavigationContext",
+      "requires_unboxed_struct_base": true,
+      "offsets": [
+        0
+      ],
+      "type": "bool",
+      "source_line": 1010006
+    },
+    "20275:IsJump": {
+      "base_type_index": 20275,
+      "base_type": "NavigationContext",
+      "requires_unboxed_struct_base": true,
+      "offsets": [
+        1
+      ],
+      "type": "bool",
+      "source_line": 1010007
+    },
+    "20285:Team": {
+      "base_type_index": 20285,
+      "base_type": "WeaponContext",
+      "requires_unboxed_struct_base": true,
+      "offsets": [
+        16
+      ],
+      "type": "u8",
+      "source_line": 1010346
+    },
+    "20285:<WasHit>k__BackingField": {
+      "base_type_index": 20285,
+      "base_type": "WeaponContext",
+      "requires_unboxed_struct_base": true,
+      "offsets": [
+        156
+      ],
+      "type": "bool",
+      "source_line": 1010358
+    },
+    "20286:<xsal>k__BackingField": {
+      "base_type_index": 20286,
+      "base_type": "jrx",
+      "requires_unboxed_struct_base": false,
+      "offsets": [
+        82
+      ],
+      "type": "u8",
+      "source_line": 1010403
+    },
+    "20286:<asme>k__BackingField": {
+      "base_type_index": 20286,
+      "base_type": "jrx",
+      "requires_unboxed_struct_base": false,
+      "offsets": [
+        84
+      ],
+      "type": "u16",
+      "source_line": 1010404
+    },
+    "34725:<Raw>k__BackingField": {
+      "base_type_index": 34725,
+      "base_type": "WeaponId",
+      "requires_unboxed_struct_base": true,
+      "offsets": [
+        0
+      ],
+      "type": "u8",
+      "source_line": 1389717
+    },
+    "35544:lossPenetrationPower": {
+      "base_type_index": 35544,
+      "base_type": "HitBox",
+      "requires_unboxed_struct_base": true,
+      "offsets": [
+        4
+      ],
+      "type": "i32",
+      "source_line": 1403334
+    },
+    "35547:Scoped": {
+      "base_type_index": 35547,
+      "base_type": "HitRequest",
+      "requires_unboxed_struct_base": true,
+      "offsets": [
+        68
+      ],
+      "type": "bool",
+      "source_line": 1403402
+    }
+  }
+}

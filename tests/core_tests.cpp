@@ -27,6 +27,20 @@ int main(){
         check(throws([&]{GuestMemory m({},3,reader);}),"invalid guest ABI fails");
         put(0x1200,std::uint32_t(0x1337));GuestMemory m32({{guest_base,host_base,host.size()}},4,reader);
         check(m32.pointer(0x1200)==0x1337,"32-bit guest pointers");
+        // Packed dump fields: uint16 HP immediately followed by uint16 max HP.
+        put(0x1400,std::uint16_t(75));put(0x1402,std::uint16_t(100));
+        check(read_scalar(mem,0x1400,ScalarType::U16)==75,"packed health read does not include adjacent field");
+        check(mem.read<std::int32_t>(0x1400)!=75,"old int32 read would merge packed fields");
+        put(0x1404,std::int16_t(-1));check(read_scalar(mem,0x1404,ScalarType::I16)==-1,"signed magazine sentinel");
+        put(0x1406,std::uint8_t(3));put(0x1407,std::uint8_t(255));
+        check(read_scalar(mem,0x1406,ScalarType::U8)==3,"byte team read ignores next byte");
+        check(read_scalar(mem,0x1407,ScalarType::I8)==-1,"signed byte read");
+        GuestMemory narrow({{0x1400,host_base+0x400,2}},8,reader);
+        check(read_scalar(narrow,0x1400,ScalarType::U16)==75,"uint16 read at end of mapped page");
+        check(throws([&]{read_scalar(narrow,0x1400,ScalarType::I32);}),"wide read at page boundary rejected");
+        put(0x1408,std::uint32_t(UINT32_MAX));check(throws([&]{read_scalar(mem,0x1408,ScalarType::U32);}),"uint32 overflow rejected");
+        put(0x140c,std::uint8_t(2));check(throws([&]{read_scalar(mem,0x140c,ScalarType::Bool);}),"invalid boolean rejected");
+        put(0x140c,std::uint8_t(1));check(read_scalar(mem,0x140c,ScalarType::Bool)==1,"boolean read");
         put(0x1200,std::uint64_t(0x100001337));check(mem.pointer(0x1200)==0x100001337,"64-bit guest pointers");
         GuestMemory split({{0x1000,host_base,8},{0x1008,host_base+8,8}},8,reader);
         const std::uint64_t crossing=0x0123456789abcdef;put(0x1004,crossing);check(split.read<std::uint64_t>(0x1004)==crossing,"read spanning mapped pages");
@@ -74,6 +88,15 @@ int main(){
         for(auto key:{"feet","head","chest","spine","eye"})js["positions"][key]={{"kind","vec3"},{"offsets",{0}}};
         js["array_data_offset"]=0;js["array_stride"]=8;std::ofstream(temp/"layout.json")<<js;
         check(load_layout(temp/"layout.json",layout,error)&&layout.enabled,"complete fixture accepted");
+        js["fields"]["health"]={{"offsets",{16}},{"type","u16"}};
+        js["fields"]["team"]={{"offsets",{32}},{"type","u8"}};
+        js["fields"]["ammo"]={{"offsets",{64,4}},{"type","i16"}};
+        js["fields"]["visible"]={{"offsets",{1}},{"type","bool"}};
+        std::ofstream(temp/"layout.json")<<js;
+        check(load_layout(temp/"layout.json",layout,error)&&layout.fields.at("health").type==ScalarType::U16&&layout.fields.at("ammo").type==ScalarType::I16,"typed field configuration");
+        js["fields"]["ammo"]["type"]="guess";std::ofstream(temp/"layout.json")<<js;
+        check(!load_layout(temp/"layout.json",layout,error)&&!layout.enabled,"unknown scalar type disables live mode");
+        js["fields"]["ammo"]["type"]="i16";
         js["regions"][0]["size"]=-1;std::ofstream(temp/"layout.json")<<js;
         check(!load_layout(temp/"layout.json",layout,error)&&!layout.enabled,"negative mapping rejected and live disabled");
         std::filesystem::remove_all(temp);std::cout<<checks<<" checks passed\n";return 0;

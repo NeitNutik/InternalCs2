@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "enabled": false,
-  "_fill": "// FILL: docs/LAYOUT.md gives extraction steps. Nulls are deliberately unknown, not offsets. Enable only after all required values and session mappings are captured.",
+  "_fill": "// FILL: see docs/DUMP_FINDINGS.md for verified relative fields and docs/LAYOUT.md for runtime extraction. Select each numeric field type from its actual declaring object. Player roots and guest mappings are not present in dump.cs.",
   "process_id": null,
   "process_created_filetime": null,
   "game_version": null,
@@ -10,32 +10,133 @@
   "world_unit_meters": 1.0,
   "matrix_column_major": true,
   "clip_w_sign": 1,
-  "viewport_insets_px": [0, 0, 0, 0],
+  "viewport_insets_px": [
+    0,
+    0,
+    0,
+    0
+  ],
   "regions": [],
   "markers": [],
   "roots": {
-    "matrix": {"base": null, "offsets": [null]},
-    "local_player": {"base": null, "offsets": [null]},
-    "entities": {"base": null, "offsets": [null]},
-    "count": {"base": null, "offsets": [null]}
+    "matrix": {
+      "base": null,
+      "offsets": [
+        null
+      ]
+    },
+    "local_player": {
+      "base": null,
+      "offsets": [
+        null
+      ]
+    },
+    "entities": {
+      "base": null,
+      "offsets": [
+        null
+      ]
+    },
+    "count": {
+      "base": null,
+      "offsets": [
+        null
+      ]
+    }
   },
   "array_data_offset": null,
   "array_stride": null,
   "max_players": 64,
   "fields": {
-    "health": [null], "max_health": [null], "team": [null],
-    "armour": [null], "ammo": [null], "weapon_id": [null], "visible": null
+    "health": {
+      "offsets": [
+        null
+      ],
+      "type": null
+    },
+    "max_health": {
+      "offsets": [
+        null
+      ],
+      "type": null
+    },
+    "team": {
+      "offsets": [
+        null
+      ],
+      "type": null
+    },
+    "armour": {
+      "offsets": [
+        null
+      ],
+      "type": null
+    },
+    "ammo": {
+      "offsets": [
+        null
+      ],
+      "type": null
+    },
+    "weapon_id": {
+      "offsets": [
+        null
+      ],
+      "type": null
+    },
+    "visible": null
   },
   "positions": {
-    "feet": {"kind": "transform", "offsets": [null]},
-    "head": {"kind": "transform", "offsets": [null]},
-    "chest": {"kind": "transform", "offsets": [null]},
-    "spine": {"kind": "transform", "offsets": [null]},
-    "eye": {"kind": "transform", "offsets": [null]}
+    "feet": {
+      "kind": "transform",
+      "offsets": [
+        null
+      ]
+    },
+    "head": {
+      "kind": "transform",
+      "offsets": [
+        null
+      ]
+    },
+    "chest": {
+      "kind": "transform",
+      "offsets": [
+        null
+      ]
+    },
+    "spine": {
+      "kind": "transform",
+      "offsets": [
+        null
+      ]
+    },
+    "eye": {
+      "kind": "transform",
+      "offsets": [
+        null
+      ]
+    }
   },
   "transform_layout": {
-    "data_path": [null], "index_path": [null], "matrices_path": [null], "parents_path": [null],
-    "stride": null, "translation": null, "rotation": null, "scale": null, "parent_stride": null
+    "data_path": [
+      null
+    ],
+    "index_path": [
+      null
+    ],
+    "matrices_path": [
+      null
+    ],
+    "parents_path": [
+      null
+    ],
+    "stride": null,
+    "translation": null,
+    "rotation": null,
+    "scale": null,
+    "parent_stride": null
   },
-  "weapon_names": {}
+  "weapon_names": {},
+  "dump_sha256": "73da8276c235f75f5ab8272246e488e4fdc541b2fc9fed1ef8fdc9eee409e8c9"
 }

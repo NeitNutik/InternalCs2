@@ -12,12 +12,21 @@ Address number(const json& j){
     require(j.get<std::int64_t>()>=0,"Negative address");return j.get<Address>();
 }
 std::vector<Address> path(const json& j){require(j.is_array()&&!j.empty()&&j.size()<=16,"Field path requires 1..16 offsets");std::vector<Address> p;for(const auto& v:j){auto x=number(v);require(x<=0x1000000,"Field offset too large");p.push_back(x);}return p;}
+ScalarField scalar_field(const json& j,ScalarType legacy){
+    if(j.is_array())return {path(j),legacy};
+    require(j.is_object(),"Scalar field requires offsets and type");
+    const std::map<std::string,ScalarType> types{{"i8",ScalarType::I8},{"u8",ScalarType::U8},
+        {"i16",ScalarType::I16},{"u16",ScalarType::U16},{"i32",ScalarType::I32},{"u32",ScalarType::U32},{"bool",ScalarType::Bool}};
+    require(j.contains("type")&&j.at("type").is_string(),"Missing scalar type: use the declaring type in the dump");
+    const auto it=types.find(j.at("type").get<std::string>());require(it!=types.end(),"Unsupported scalar type");
+    return {path(j.at("offsets")),it->second};
+}
 }
 bool load_layout(const std::filesystem::path& file,Layout& out,std::string& error){
     try{
         std::ifstream stream(file);if(!stream)throw std::runtime_error("Cannot open config/layout.json");const auto j=json::parse(stream);
         require(j.at("schema_version")==1,"Unsupported layout schema");Layout l;l.enabled=j.at("enabled").get<bool>();
-        if(!l.enabled){out=std::move(l);error="Live mode inactive: complete config/layout.json";return true;}
+        if(!l.enabled){out=std::move(l);error="Live mode inactive: configure process identity, memory mappings and roots in layout.json";return true;}
         l.pid=j.at("process_id").get<std::uint32_t>();l.created=number(j.at("process_created_filetime"));require(l.pid>0&&l.created>0,"Missing emulator process identity");
         l.game_version=j.at("game_version").get<std::string>();l.game_build_id=j.at("libil2cpp_build_id").get<std::string>();
         require(!l.game_version.empty()&&!l.game_build_id.empty(),"Missing game version/build ID");
@@ -33,8 +42,8 @@ bool load_layout(const std::filesystem::path& file,Layout& out,std::string& erro
         }
         require(!l.markers.empty()&&l.markers.size()<=32,"Missing session markers");
         for(auto key:{"matrix","local_player","entities","count"}){const auto& r=j.at("roots").at(key);l.roots[key]={number(r.at("base")),path(r.at("offsets"))};require(l.roots[key].base>0,"Null root address");}
-        for(auto key:{"health","max_health","team","armour","ammo","weapon_id"})l.fields[key]=path(j.at("fields").at(key));
-        if(j.at("fields").contains("visible")&&!j.at("fields").at("visible").is_null())l.fields["visible"]=path(j.at("fields").at("visible"));
+        for(auto key:{"health","max_health","team","armour","ammo","weapon_id"})l.fields[key]=scalar_field(j.at("fields").at(key),ScalarType::I32);
+        if(j.at("fields").contains("visible")&&!j.at("fields").at("visible").is_null())l.fields["visible"]=scalar_field(j.at("fields").at("visible"),ScalarType::U8);
         bool transforms=false;
         for(auto key:{"feet","head","chest","spine","eye"}){
             const auto& p=j.at("positions").at(key);const auto kind=p.at("kind").get<std::string>();require(kind=="vec3"||kind=="transform","Unknown position type");

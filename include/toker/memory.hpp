@@ -47,6 +47,28 @@ private:
     std::vector<Region> regions_;unsigned pointer_bytes_;HostRead reader_;
 };
 struct Quaternion { float x{},y{},z{},w{1}; };
+enum class ScalarType { I8,U8,I16,U16,I32,U32,Bool };
+struct ScalarField { std::vector<Address> offsets;ScalarType type{ScalarType::I32}; };
+inline int read_scalar(const GuestMemory& memory,Address address,ScalarType type){
+    switch(type){
+    case ScalarType::I8:return memory.read<std::int8_t>(address);
+    case ScalarType::U8:return memory.read<std::uint8_t>(address);
+    case ScalarType::I16:return memory.read<std::int16_t>(address);
+    case ScalarType::U16:return memory.read<std::uint16_t>(address);
+    case ScalarType::I32:return memory.read<std::int32_t>(address);
+    case ScalarType::U32:{
+        const auto value=memory.read<std::uint32_t>(address);
+        if(value>std::uint32_t(INT32_MAX))throw std::runtime_error("Unsigned scalar exceeds display range");
+        return int(value);
+    }
+    case ScalarType::Bool:{
+        const auto value=memory.read<std::uint8_t>(address);
+        if(value>1)throw std::runtime_error("Invalid bool field");
+        return value;
+    }
+    }
+    throw std::runtime_error("Unsupported scalar type");
+}
 inline Vec3 cross(Vec3 a,Vec3 b){return {a.y*b.z-a.z*b.y,a.z*b.x-a.x*b.z,a.x*b.y-a.y*b.x};}
 inline Vec3 rotate(Quaternion q,Vec3 v){const Vec3 xyz{q.x,q.y,q.z};const auto t=cross(xyz,v)*2;return v+t*q.w+cross(xyz,t);}
 struct TransformLayout {

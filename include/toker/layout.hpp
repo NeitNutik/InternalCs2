@@ -18,7 +18,7 @@ struct Layout {
     std::string game_version,game_build_id;
     std::vector<Region> regions;std::vector<Marker> markers;
     std::map<std::string,Root> roots;
-    std::map<std::string,std::vector<Address>> fields;
+    std::map<std::string,ScalarField> fields;
     std::map<std::string,PositionField> positions;
     std::map<int,std::string> weapons;
     TransformLayout transform;

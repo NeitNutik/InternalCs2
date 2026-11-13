@@ -2,7 +2,9 @@
 
 External Windows x64 C++20/ImGui project with a standalone synthetic preview and a configurable emulator-memory adapter.
 
-**Status: compiled prototype, not a ready-to-run Standoff 2 cheat.** No live BlueStacks installation, game dump, or verified guest-to-host mappings were available. `config/layout.json` deliberately ships disabled, with unknown addresses marked `FILL`. Live ESP and aim require completing that layout. Silent aim is not implemented.
+**Status: compiled prototype, not a ready-to-run Standoff 2 cheat.** The supplied IL2CPP dump has now been parsed: 19 relevant types and 38 relative numeric field bindings are in `config/dump-catalogue.json`. It does not contain live BlueStacks mappings, player roots or the native method bodies needed to resolve obfuscated semantics. `config/layout.json` remains disabled, with unknown runtime addresses marked `FILL`. Silent aim is not implemented.
+
+See [docs/DUMP_FINDINGS.md](docs/DUMP_FINDINGS.md) for the actual field evidence and remaining inputs. Numeric reads now support explicit 8-, 16- and 32-bit signed/unsigned types and strict booleans; the old int32-only assumption did not match several packed fields in the attachment. Importing the catalogue does not make an unverified live configuration valid.
 
 ## What is included
 

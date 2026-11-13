@@ -28,7 +28,9 @@ bool Game::attach(){
     });return true;
 }
 Address Game::root(const char* name)const{const auto& r=layout_.roots.at(name);return memory_->path(r.base,r.offsets);}
-int Game::field(Address object,const char* name)const{return memory_->read<std::int32_t>(memory_->path(object,layout_.fields.at(name)));}
+int Game::field(Address object,const char* name)const{
+    const auto& spec=layout_.fields.at(name);return read_scalar(*memory_,memory_->path(object,spec.offsets),spec.type);
+}
 Vec3 Game::position(Address object,const char* name)const{
     const auto& p=layout_.positions.at(name);const auto address=memory_->path(object,p.offsets);
     const Vec3 v=p.transform?transform_position(*memory_,memory_->pointer(address),layout_.transform):memory_->read<Vec3>(address);
@@ -60,7 +62,7 @@ Frame Game::sample(){
             p.feet=position(player,"feet");p.head=position(player,"head");p.chest=position(player,"chest");p.spine=position(player,"spine");
             if(length(p.head-p.feet)*meters_per_unit>5)throw std::runtime_error("Bone positions failed validation");
             p.armour=std::clamp(field(player,"armour"),0,100);p.ammo=std::clamp(field(player,"ammo"),-1,1000);
-            if(layout_.fields.contains("visible"))p.spotted_by_local=memory_->read<std::uint8_t>(memory_->path(player,layout_.fields.at("visible")))!=0;
+            if(layout_.fields.contains("visible"))p.spotted_by_local=field(player,"visible")!=0;
             const auto id=field(player,"weapon_id");const auto weapon=layout_.weapons.find(id);p.weapon=weapon==layout_.weapons.end()?"Weapon #"+std::to_string(id):weapon->second;
             p.name="Player "+std::to_string(i+1);f.players.push_back(std::move(p));
         }
