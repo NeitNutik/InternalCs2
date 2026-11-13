@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "build_number": 14197,
+  "source_commit": "cb01076744f3554324d76b7a4830f0fcdfde95fb",
+  "source_timestamp": "2026-11-12T13:07:45.363725600+00:00",
+  "modules": {
+    "entity_list": 40931344,
+    "local_pawn": 39140664,
+    "local_controller": 38973640,
+    "view_matrix": 39163456,
+    "view_angles": 39232696,
+    "build_number": 7023896
+  },
+  "fields": {
+    "health": 844,
+    "max_health": 840,
+    "team": 999,
+    "life_state": 852,
+    "scene_node": 816,
+    "origin": 200,
+    "dormant": 259,
+    "pawn_handle": 2348,
+    "player_name": 1788,
+    "armour": 7936,
+    "immunity": 13624,
+    "view_offset": 3936,
+    "weapon_services": 4848,
+    "active_weapon": 96,
+    "clip": 6440,
+    "attribute_manager": 4752,
+    "item": 80,
+    "item_definition": 442,
+    "spotted_state": 7864,
+    "spotted": 8,
+    "spotted_mask": 12,
+    "model_state": 320,
+    "velocity": 1016
+  },
+  "layout": {
+    "entity_chunks": 16,
+    "entity_stride": 112,
+    "entity_chunk_shift": 9,
+    "entity_chunk_mask": 511,
+    "entity_index_mask": 32767,
+    "max_players": 64,
+    "bones_in_model_state": 128,
+    "bone_stride": 32,
+    "head_bone": 6,
+    "chest_bone": 4,
+    "spine_bone": 2
+  }
+}
