@@ -1,0 +1,7 @@
+/build*/
+/.vs/
+*.user
+config/*.ini
+config/*.bak
+config/*.tmp
+__pycache__/

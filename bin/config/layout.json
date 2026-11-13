@@ -1,0 +1,41 @@
+{
+  "schema_version": 1,
+  "enabled": false,
+  "_fill": "// FILL: docs/LAYOUT.md gives extraction steps. Nulls are deliberately unknown, not offsets. Enable only after all required values and session mappings are captured.",
+  "process_id": null,
+  "process_created_filetime": null,
+  "game_version": null,
+  "libil2cpp_build_id": null,
+  "guest_pointer_bytes": null,
+  "world_unit_meters": 1.0,
+  "matrix_column_major": true,
+  "clip_w_sign": 1,
+  "viewport_insets_px": [0, 0, 0, 0],
+  "regions": [],
+  "markers": [],
+  "roots": {
+    "matrix": {"base": null, "offsets": [null]},
+    "local_player": {"base": null, "offsets": [null]},
+    "entities": {"base": null, "offsets": [null]},
+    "count": {"base": null, "offsets": [null]}
+  },
+  "array_data_offset": null,
+  "array_stride": null,
+  "max_players": 64,
+  "fields": {
+    "health": [null], "max_health": [null], "team": [null],
+    "armour": [null], "ammo": [null], "weapon_id": [null], "visible": null
+  },
+  "positions": {
+    "feet": {"kind": "transform", "offsets": [null]},
+    "head": {"kind": "transform", "offsets": [null]},
+    "chest": {"kind": "transform", "offsets": [null]},
+    "spine": {"kind": "transform", "offsets": [null]},
+    "eye": {"kind": "transform", "offsets": [null]}
+  },
+  "transform_layout": {
+    "data_path": [null], "index_path": [null], "matrices_path": [null], "parents_path": [null],
+    "stride": null, "translation": null, "rotation": null, "scale": null, "parent_stride": null
+  },
+  "weapon_names": {}
+}
