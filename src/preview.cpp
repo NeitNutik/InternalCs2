@@ -1,3 +1,5 @@
+#include "toker/dx11_resize.hpp"
+#include "toker/diagnostics.hpp"
 #include "toker/ui.hpp"
 #include <windows.h>
 #include <d3d11.h>
@@ -45,7 +47,11 @@ int WINAPI WinMain(HINSTANCE instance,HINSTANCE,LPSTR,int){
         MSG msg{};while(PeekMessageW(&msg,nullptr,0,0,PM_REMOVE)){TranslateMessage(&msg);DispatchMessageW(&msg);if(msg.message==WM_QUIT)done=true;}
         if(done)break;
         if(IsIconic(hwnd)){WaitMessage();continue;}
-        if(next_width&&next_height){target.Reset();if(FAILED(chain->ResizeBuffers(0,next_width,next_height,DXGI_FORMAT_UNKNOWN,0))||!create_target())break;next_width=next_height=0;}
+        if(next_width&&next_height){
+            const auto resized=toker::resize_target(chain.Get(),device.Get(),context.Get(),target,next_width,next_height);
+            next_width=next_height=0;
+            if(FAILED(resized)){toker::graphics_failure(hwnd,root,"ResizeBuffers / render target",resized,device->GetDeviceRemovedReason());break;}
+        }
         const bool focused=GetForegroundWindow()==hwnd;
         const bool insert=focused&&(GetAsyncKeyState(VK_INSERT)&0x8000);if(insert&&!insert_down)ui.menu_open=!ui.menu_open;insert_down=insert;
         const auto now=std::chrono::steady_clock::now();const float dt=std::chrono::duration<float>(now-last).count();last=now;
@@ -70,7 +76,8 @@ int WINAPI WinMain(HINSTANCE instance,HINSTANCE,LPSTR,int){
         ui.render(frame);ImGui::Render();
         const float clear[4]{0.035f,0.045f,0.065f,1};auto* view=target.Get();context->OMSetRenderTargets(1,&view,nullptr);context->ClearRenderTargetView(view,clear);
         ImGui_ImplDX11_RenderDrawData(ImGui::GetDrawData());
-        if(FAILED(chain->Present(1,0)))break;
+        const auto presented=chain->Present(1,0);
+        if(FAILED(presented)){toker::graphics_failure(hwnd,root,"Present",presented,device->GetDeviceRemovedReason());break;}
     }
     ImGui_ImplDX11_Shutdown();ImGui_ImplWin32_Shutdown();ImGui::DestroyContext();
     target.Reset();chain.Reset();context.Reset();device.Reset();DestroyWindow(hwnd);UnregisterClassW(wc.lpszClassName,instance);return 0;

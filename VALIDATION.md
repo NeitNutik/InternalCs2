@@ -1,5 +1,7 @@
 # Validation — 2026-11-13
 
+Resize fix: both executables now unbind the render target before `ResizeBuffers`. The live overlay avoids redundant resize notifications. `Present` and resize failures display/log HRESULT and device status. A Windows WARP regression test binds a back buffer, then exercises twelve resizes and verifies the resulting dimensions. This test was cross-compiled here; it requires Windows to execute. Run `bin/toker_dx11_tests.exe` from a terminal or use CTest on Windows.
+
 Passed:
 
 - Portable C++20 Debug build: GCC 14.2.0, CMake 4.4.4.

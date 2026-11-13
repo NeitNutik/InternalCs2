@@ -23,6 +23,8 @@ The reader opens `HD-Player.exe` with `PROCESS_VM_READ` and query access. Mouse 
 
 ## Run
 
+The resize-fix build releases the DirectX context's back-buffer reference before resizing. It also skips redundant window resizes. Graphics failures display their HRESULT and append details to `config/graphics-error.log` instead of silently exiting. This addresses a confirmed resource-lifetime error in the overlay; it does not establish the cause of a crash inside Standoff 2 or BlueStacks.
+
 Extract the archive on Windows 10/11 x64 and keep `bin/config` beside the executables.
 
 1. Run `bin/toker_preview.exe` to inspect the menu and synthetic scene immediately.

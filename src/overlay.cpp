@@ -1,3 +1,5 @@
+#include "toker/dx11_resize.hpp"
+#include "toker/diagnostics.hpp"
 #include "toker/game.hpp"
 #include "toker/ui.hpp"
 #include <d3d11.h>
@@ -90,9 +92,17 @@ int WINAPI WinMain(HINSTANCE instance,HINSTANCE,LPSTR,int){
         if(emulator){
             RECT r{};
             if(IsIconic(emulator)||!focused||!viewport(emulator,game.layout(),r)){ShowWindow(hwnd,SW_HIDE);aim.reset();last=std::chrono::steady_clock::now();Sleep(30);continue;}
-            SetWindowPos(hwnd,HWND_TOPMOST,r.left,r.top,r.right-r.left,r.bottom-r.top,SWP_NOACTIVATE|SWP_SHOWWINDOW);
+            RECT current{};GetWindowRect(hwnd,&current);
+            UINT flags=SWP_NOACTIVATE|SWP_SHOWWINDOW;
+            if(current.left==r.left&&current.top==r.top)flags|=SWP_NOMOVE;
+            if(current.right-current.left==r.right-r.left&&current.bottom-current.top==r.bottom-r.top)flags|=SWP_NOSIZE;
+            SetWindowPos(hwnd,HWND_TOPMOST,r.left,r.top,r.right-r.left,r.bottom-r.top,flags);
         }else if(attached_pid){ShowWindow(hwnd,SW_SHOWNA);}
-        if(next_width&&next_height){target.Reset();if(FAILED(chain->ResizeBuffers(0,next_width,next_height,DXGI_FORMAT_UNKNOWN,0))||!create_target())break;next_width=next_height=0;}
+        if(next_width&&next_height){
+            const auto resized=toker::resize_target(chain.Get(),device.Get(),context.Get(),target,next_width,next_height);
+            next_width=next_height=0;
+            if(FAILED(resized)){toker::graphics_failure(hwnd,root,"ResizeBuffers / render target",resized,device->GetDeviceRemovedReason());break;}
+        }
         const auto now=std::chrono::steady_clock::now();const float dt=std::chrono::duration<float>(now-last).count();last=now;
         ImGui_ImplDX11_NewFrame();ImGui_ImplWin32_NewFrame();ImGui::NewFrame();
         auto frame=game.sample();const auto display=ImGui::GetIO().DisplaySize;
@@ -100,7 +110,8 @@ int WINAPI WinMain(HINSTANCE instance,HINSTANCE,LPSTR,int){
         if(!aim.run(frame,ui.settings.aim,{display.x,display.y},dt,emulator&&foreground==emulator&&!ui.menu_open))frame.status="Mouse input rejected by Windows";
         ui.render(frame);ImGui::Render();
         const float clear[4]{0,0,0,0};auto* view=target.Get();context->OMSetRenderTargets(1,&view,nullptr);context->ClearRenderTargetView(view,clear);
-        ImGui_ImplDX11_RenderDrawData(ImGui::GetDrawData());if(FAILED(chain->Present(1,0)))break;
+        ImGui_ImplDX11_RenderDrawData(ImGui::GetDrawData());const auto presented=chain->Present(1,0);
+        if(FAILED(presented)){toker::graphics_failure(hwnd,root,"Present",presented,device->GetDeviceRemovedReason());break;}
     }
     ImGui_ImplDX11_Shutdown();ImGui_ImplWin32_Shutdown();ImGui::DestroyContext();target.Reset();chain.Reset();context.Reset();device.Reset();
     DestroyWindow(hwnd);UnregisterClassW(wc.lpszClassName,instance);return 0;
